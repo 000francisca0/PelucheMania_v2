@@ -8,6 +8,5 @@ function loadContactData(){
     document.getElementById('modalMessage').textContent = message;
 }
 
-function inicio(){
 
-}
+
