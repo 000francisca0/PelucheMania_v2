@@ -35,12 +35,48 @@ function contactData() {
 }
 
 
-function registerUser() {
-  const email = document.getElementById('email').value;
-  const subject = document.getElementById('subject').value;
-  const message = document.getElementById('message').value;
+function inicioSesion() {
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value.trim();
+  const emailHelp = document.getElementById('emailHelp');
+  const passwordHelp = document.getElementById('passwordHelp')
 
-  document.getElementById('modalEmail').textContent = email;
-  document.getElementById('modalSubject').textContent = subject;
-  document.getElementById('modalMessage').textContent = message;
+  const emailRegex = /^[\w.-]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/;
+
+
+  emailHelp.textContent = '';
+  passwordHelp.textContent = '';
+
+  let esValido = true;
+
+  // Validar email
+  if (email.length > 100) {
+    emailHelp.textContent('Correo inválido. Máximo 100 caracteres.');
+    esValido = false;
   }
+  if (!emailRegex.test(email)) {
+    emailHelp.textContent = 'El correo debe ser de @duoc.cl, @profesor.duoc.cl o @gmail.com.';
+    esValido = false;
+  }
+
+  //Validar contraseña
+  if (password.length < 4 || password.length > 10){
+    passwordHelp.textContent = 'La contraseña  debe tener entre 4 y 10 caracteres'
+    esValido = false;
+  }
+  
+  return esValido
+  }
+document.addEventListener('DOMContentLoaded', function() {
+  // Obtiene el formulario por su ID
+  const form = document.getElementById('loginForm');
+
+  // Añade un event listener para el evento 'submit' (envío del formulario)
+  form.addEventListener('submit', function(event) {
+    // Llama a la función de validación
+    if (!inicioSesion()) {
+      // Si la validación falla (devuelve false), previene el envío del formulario.
+      event.preventDefault();
+    }
+  });
+});
