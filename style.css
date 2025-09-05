@@ -73,3 +73,18 @@ body {
     margin: 10px 0;
   }
 }
+
+/* Estilos para el título de la tarjeta */
+.card-body .card-title {
+  margin-top: 15px; /* Añade un poco de espacio superior si lo necesitas */
+  margin-bottom: 15px; /* Añade un poco de espacio inferior */
+  padding: 0 20px; /* Un poco de padding a los lados para que el texto no se pegue a los bordes en pantallas pequeñas */
+  font-size: 1.8rem; /* Ajusta el tamaño de la fuente si lo deseas */
+  line-height: 1.4; /* Espaciado entre líneas para mejor lectura */
+  color: #555; /* Un color de texto más suave si #333 es muy oscuro */
+}
+
+/* Para centrar el botón si estuviera dentro del card-body */
+.card-body .btn {
+  margin-top: 20px; /* Ejemplo de espacio para un botón */
+}
