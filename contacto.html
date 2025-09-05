@@ -27,7 +27,7 @@
 
 <body>
     <!--Header y barra de navegacion-->
-      <header class="main-header">
+    <header class="main-header">
         <div class="header-container">
             <a href="index.html" class="logo">🐻 Peluchemania </a>
             <nav class="main-nav">
@@ -42,16 +42,35 @@
             </nav>
         </div>
     </header>
-    <div class="card">
-        <div class="card-header">
-            Featured
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+
+    <div class="card-body text-center" style="display: flex; flex-direction: column; align-items: center;">
+        <h5 class="card-title">Si necesitas resolver alguna duda puedes contactarnos por este medio</h5>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row justified-content-center" style="display: flex; flex-direction: column; align-items: center;">
+            <div class="col-md-8 col-lg-8">
+                <form>
+
+                    <div>
+                        <label for="usuario">Correo electrónico</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div>
+                        <label for="usuario">Nombre</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div>
+                        <label for="usuario">Mensaje</label>
+                        <input type="text" class="form-control form-control-lg" id="subject" required>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-secondary">Enviar</button>
+                    </div>
+            </div>
         </div>
     </div>
+    </form>
 
 </body>
 
