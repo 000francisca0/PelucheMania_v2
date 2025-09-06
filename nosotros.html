@@ -45,36 +45,47 @@
         </div>
     </header>
 
-    <div class="card-body text-center" style="display: flex; flex-direction: column; align-items: center;">
-        <h5 class="card-title">Si necesitas resolver alguna duda puedes contactarnos por este medio</h5>
+    <!--Para centrar el texto de bienvenida-->
+    <div class="card-body text-center">
+        <h5 class="card-title"> ¿Quiénes somos?</h5>
     </div>
+    <!--Temrino de la bienvenida-->
+    <main class="container my-5">
+        <h1 class="text-center mb-4">Conoce a PelucheMania: Nuestra Historia</h1>
 
-    <div class="container mt-5">
-        <div class="row justified-content-center" style="display: flex; flex-direction: column; align-items: center;">
-            <div class="col-md-8 col-lg-8">
-                <form>
-
-                    <div>
-                        <label for="usuario">Correo electrónico</label>
-                        <input type="email" class="form-control" id="email" required>
-                    </div>
-                    <div>
-                        <label for="usuario">Nombre</label>
-                        <input type="text" class="form-control" id="name" required>
-                    </div>
-                    <div>
-                        <label for="usuario">Mensaje</label>
-                        <input type="text" class="form-control form-control-lg" id="subject" required>
-                    </div>
-                    <div>
-                        <button type="submit" class="btn btn-secondary">Enviar</button>
-                    </div>
+        <div class="row align-items-center">
+            <div class="col-md-6 order-md-2"> <img src="img/osofeliz.jpg"
+                    alt="Imagen representativa de PelucheMania" class="img-fluid rounded shadow-sm mb-4 mb-md-0">
+            </div>
+            <div class="col-md-6 order-md-1">
+                <p class="lead">
+                    En PelucheMania, creemos que cada abrazo tiene el poder de transformar un día, evocar una sonrisa y
+                    crear recuerdos inolvidables. Nuestra historia comenzó en 2023, en el corazón de La Granja,
+                    Santiago, como un sueño compartido de llevar alegría y confort a cada hogar a través de los peluches
+                    más tiernos y de la más alta calidad.
+                </p>
+                <p>
+                    Desde nuestros humildes comienzos, nos hemos dedicado a seleccionar y crear cada peluche con un
+                    cuidado excepcional, buscando no solo la suavidad perfecta sino también ese toque mágico que los
+                    hace únicos. Creemos firmemente que un peluche es más que un juguete; es un compañero, un confidente
+                    y un guardián de sueños.
+                </p>
+                <p>
+                    PelucheMania es el fruto de la pasión y visión de sus fundadores, <strong>Francisca Sanhueza y Joaquín
+                    Lazo.</strong> Con la firme convicción de que la felicidad se puede medir en abrazos, ellos se propusieron
+                    construir un espacio donde la ternura y la imaginación no tuvieran límites. Su dedicación ha sido la
+                    fuerza impulsora detrás de cada oso, conejo y criatura mágica que hoy forma parte de nuestra
+                    familia.
+                </p>
+                <p>
+                    Gracias por ser parte de nuestra historia y por permitirnos compartir la magia de PelucheMania
+                    contigo. ¡Esperamos que cada peluche te traiga tanta alegría como a nosotros nos trae crearlos!
+                </p>
             </div>
         </div>
-    </div>
-    </form>
+    </main>
 
-    <!--Footer con formulario de correo-->
+
     <footer>
         <div class="footer-content">
             <p>&copy; 2025 PelucheMania. Todos los derechos reservados.</p>
@@ -86,14 +97,17 @@
         </div>
         <div class="newsletter-form">
             <h3>Mantente en contacto únete a nuestro newsletter</h3>
-            <form action="contacto.html" method="get">
+            <form action="inicioSesion.html" method="get">
                 <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" required>
+                <small id="emailHelp" class="form-text text-danger"></small>
                 <button type="submit">Suscribir</button>
             </form>
         </div>
     </footer>
 
 </body>
+
+<script src="funciones.js"></script>
 
 </html>

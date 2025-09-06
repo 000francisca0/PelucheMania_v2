@@ -29,7 +29,7 @@
     <!--Header y barra de navegacion-->
     <header class="main-header">
         <div class="header-container">
-            <a href="index.html" class="logo">Peluchemania 🐻</a>
+            <a href="index.html" class="logo">🐻 Peluchemania </a>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
@@ -44,16 +44,31 @@
             </nav>
         </div>
     </header>
+    <div>
+        <p>
 
-    <div class="card-body" style="display: flex; flex-direction: column; align-items: center;">
-        <h5 class="card-title">Tú carrito</h5>
-        <a href="productos.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Volver a productos</a>
+        </p>
     </div>
 
-     <div id="carrito">
-            </div>
-
+    <div class="row mb-5 justify-content-center">
+        <div class="col-md-6 text-center"
+            style="background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 8px;">
+            <h2 style="font-weight: bold; color: #00063f;">Nuestros peluches pueden ayudarte a superar tus miedos</h2>
+            <p style="color: #555;">
+                La historia de Camila nos recuerda que los peluches no tienen edad. Tras un año difícil, Camila, una
+                estudiante universitaria, se sentía agotada y nostálgica. Su abuela, en un gesto de amor, le envió uno
+                de nuestros conejos de peluche. Camila al principio se sorprendió, pero al abrazarlo, sintió una oleada
+                de nostalgia y consuelo.</p>
+            <p style="color: #555;">
+                El peluche, al que llamó "Toby", se convirtió en su pequeño recordatorio diario de las cosas que la
+                hacían feliz. Se lo llevaba en la mochila y lo abrazaba en los momentos de estrés. Toby le devolvió la
+                sonrisa y le enseñó que no hay nada de malo en buscar consuelo en la simplicidad y el cariño que un
+                peluche puede ofrecer.
+            </p>
+        </div>
     </div>
+
+
 
     <!--Footer con formulario de correo-->
     <footer>
@@ -67,14 +82,17 @@
         </div>
         <div class="newsletter-form">
             <h3>Mantente en contacto únete a nuestro newsletter</h3>
-            <form action="carrito.html" method="get">
+            <form action="inicioSesion.html" method="get">
                 <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" required>
+                <small id="emailHelp" class="form-text text-danger"></small>
                 <button type="submit">Suscribir</button>
             </form>
         </div>
     </footer>
 
-</body> 
-<script src="fproductos.js"></script>
+</body>
+
+<script src="funciones.js"></script>
+
 </html>

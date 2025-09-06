@@ -29,7 +29,7 @@
     <!--Header y barra de navegacion-->
     <header class="main-header">
         <div class="header-container">
-            <a href="index.html" class="logo">Peluchemania 🐻</a>
+            <a href="index.html" class="logo">🐻 Peluchemania </a>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
@@ -44,16 +44,35 @@
             </nav>
         </div>
     </header>
+    <div>
+        <p>
 
-    <div class="card-body" style="display: flex; flex-direction: column; align-items: center;">
-        <h5 class="card-title">Tú carrito</h5>
-        <a href="productos.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Volver a productos</a>
+        
+        </p>
+    </div>
+    <!--Texto de la noticia del blog-->
+    <div class="row mb-5 justify-content-center">
+        <div class="col-md-6 text-center"
+            style="background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 8px;">
+            <h2 style="font-weight: bold; color: #00063f;">¿Los peluches pueden ser nuestros mejores amigos?</h2>
+            <p style="color: #555;">
+                Conoce a Tomás, un niño de 7 años que, como muchos, solía tener miedo a la hora de dormir. Su
+                imaginación
+                jugaba con las sombras, convirtiendo objetos comunes en figuras amenazantes. Sus padres, buscando una
+                solución, le regalaron un majestuoso oso de peluche de PelucheMania, al que llamaron "Bruno".</p>
+            <p style="color: #555;">
+                Desde la primera noche, Bruno no solo se convirtió en su compañero de cama, sino en un verdadero
+                guardián de
+                sueños. Tomás le contaba sus temores y Bruno, con su suave pelaje, parecía absorberlos. Con el tiempo,
+                el
+                miedo de Tomás a la oscuridad se desvaneció, reemplazado por la confianza y el confort que le daba su
+                incondicional amigo de peluche.
+            </p>
+        </div>
     </div>
 
-     <div id="carrito">
-            </div>
 
-    </div>
+
 
     <!--Footer con formulario de correo-->
     <footer>
@@ -67,14 +86,17 @@
         </div>
         <div class="newsletter-form">
             <h3>Mantente en contacto únete a nuestro newsletter</h3>
-            <form action="carrito.html" method="get">
+            <form action="inicioSesion.html" method="get">
                 <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" required>
+                <small id="emailHelp" class="form-text text-danger"></small>
                 <button type="submit">Suscribir</button>
             </form>
         </div>
     </footer>
 
-</body> 
-<script src="fproductos.js"></script>
+</body>
+
+<script src="funciones.js"></script>
+
 </html>

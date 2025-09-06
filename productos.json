@@ -50,10 +50,10 @@
     },
     {
       "id": 7,
-      "nombre": "Perrito de Peluche Beagle",
-      "descripcion": "Perrito Beagle de peluche de 30 cm, muy tierno y con detalles realistas.",
+      "nombre": "Perrito de Peluche ",
+      "descripcion": "Perrito de peluche de 30 cm, muy tierno y con detalles realistas.",
       "precio": 12990,
-      "imagen": "img/perrito.jpg",
+      "imagen": "img/perro.jpg",
       "categoria": "Peluches"
     },
     {
