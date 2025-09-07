@@ -265,3 +265,53 @@ function mostrarDetalleProducto() {
         contenedor.innerHTML = '<p>Producto no encontrado.</p>';
     }
 }
+
+//Validar el formulario de contacto
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita que el formulario se envíe
+
+            let esValido = true;
+
+            // 1. Validar el email
+            const emailInput = document.getElementById('emailContacto');
+            const emailHelp = document.getElementById('emailHelp');
+            const emailRegex = /^[\w.-]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/;
+
+            emailHelp.textContent = ''; // Limpia el mensaje de error anterior
+            if (emailInput.value.length > 100 || !emailRegex.test(emailInput.value)) {
+                emailHelp.textContent = 'El correo no es válido. Debe ser de @duoc.cl, @profesor.duoc.cl, @gmail.com y no exceder los 100 caracteres.';
+                esValido = false;
+            }
+
+            // 2. Validar el nombre
+            const nombreInput = document.getElementById('nombreContacto');
+            const nombreHelp = document.getElementById('nombreHelp');
+
+            nombreHelp.textContent = ''; // Limpia el mensaje de error anterior
+            if (nombreInput.value.trim().length < 2 || nombreInput.value.trim().length > 50) {
+                nombreHelp.textContent = 'El nombre debe tener entre 2 y 50 caracteres.';
+                esValido = false;
+            }
+
+            // 3. Validar el mensaje
+            const mensajeInput = document.getElementById('mensajeContacto');
+            const mensajeHelp = document.getElementById('mensajeHelp');
+
+            mensajeHelp.textContent = ''; // Limpia el mensaje de error anterior
+            if (mensajeInput.value.trim().length < 10 || mensajeInput.value.trim().length > 500) {
+                mensajeHelp.textContent = 'El mensaje debe tener entre 10 y 500 caracteres.';
+                esValido = false;
+            }
+
+            // Si todo es válido, muestra la alerta de éxito
+            if (esValido) {
+                alert('¡Formulario de contacto enviado con éxito!');
+                contactForm.reset(); // Opcional: limpia los campos del formulario
+            }
+        });
+    }
+});

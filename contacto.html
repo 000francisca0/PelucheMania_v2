@@ -52,49 +52,60 @@
     <div class="container mt-5">
         <div class="row justified-content-center" style="display: flex; flex-direction: column; align-items: center;">
             <div class="col-md-8 col-lg-8">
-                <form>
+                <div class="container mt-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 col-lg-8">
 
-                    <div>
-                        <label for="usuario">Correo electrónico</label>
-                        <input type="email" class="form-control" id="email" required>
-                    </div>
-                    <div>
-                        <label for="usuario">Nombre</label>
-                        <input type="text" class="form-control" id="name" required>
-                    </div>
-                    <div>
-                        <label for="usuario">Mensaje</label>
-                        <input type="text" class="form-control form-control-lg" id="subject" required>
-                    </div>
-                    <div>
-                        <button type="submit" class="btn btn-secondary">Enviar</button>
-                    </div>
-            </div>
-        </div>
-    </div>
-    </form>
+                            <form id="contactForm">
+                                <div class="form-group">
+                                    <label for="emailContacto">Correo electrónico</label>
+                                    <input type="email" class="form-control" id="emailContacto"
+                                        placeholder="tucorreo@gmail.com" required>
+                                    <small id="emailHelp" class="form-text text-danger"></small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nombreContacto">Nombre completo</label>
+                                    <input type="text" class="form-control" id="nombreContacto" placeholder="Tony Stark"
+                                        required>
+                                    <small id="nombreHelp" class="form-text text-danger"></small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mensajeContacto">Mensaje</label>
+                                    <textarea class="form-control" id="mensajeContacto" rows="5" required></textarea>
+                                    <small id="mensajeHelp" class="form-text text-danger"></small>
+                                </div>
+                                <div>
+                                    <button type="submit" class="btn btn-secondary">Enviar</button>
+                                </div>
+                            </form>
 
-    <!--Footer con formulario de correo-->
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 PelucheMania. Todos los derechos reservados.</p>
-            <div class="social-media">
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">Twitter</a>
-            </div>
-        </div>
-        <div class="newsletter-form">
-            <h3>Mantente en contacto únete a nuestro newsletter</h3>
-            <form id="newsletterForm" action="inicioSesion.html" method="get">
-                <label for="newsletterEmail">Correo electrónico:</label>
-                <input type="email" id="newsletterEmail" name="email">
-                <small id="newsletterEmailHelp" class="form-text text-danger"></small>
-                <button type="submit">Suscribir</button>
-            </form>
-        </div>
-    </footer>
+
+                        </div>
+                    </div>
+                </div>
+                <!--Footer con formulario de correo-->
+                <footer>
+                    <div class="footer-content">
+                        <p>&copy; 2025 PelucheMania. Todos los derechos reservados.</p>
+                        <div class="social-media">
+                            <a href="#">Facebook</a>
+                            <a href="#">Instagram</a>
+                            <a href="#">Twitter</a>
+                        </div>
+                    </div>
+                    <div class="newsletter-form">
+                        <h3>Mantente en contacto únete a nuestro newsletter</h3>
+                        <form id="newsletterForm" action="inicioSesion.html" method="get">
+                            <label for="newsletterEmail">Correo electrónico:</label>
+                            <input type="email" id="newsletterEmail" name="email">
+                            <small id="newsletterEmailHelp" class="form-text text-danger"></small>
+                            <button type="submit">Suscribir</button>
+                        </form>
+                    </div>
+                </footer>
 
 </body>
+<script src="funciones.js"></script>
+
 
 </html>
