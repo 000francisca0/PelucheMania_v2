@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Validacion de email foter
+// Validacion de email footer
 document.addEventListener('DOMContentLoaded', function() {
   const newsletterForm = document.getElementById('newsletterForm');
 
@@ -194,22 +194,24 @@ function mostrarProductos(productos) {
                 <h3>${producto.nombre}</h3>
                 <p>${producto.descripcion}</p>
                 <p><strong>$${producto.precio.toLocaleString()}</strong></p>
-                <button class="agregar-carrito" onclick="añadirCarrito(${producto.id})">Agregar al carrito</button></div>
+                <input type="number" id="cantidad-${producto.id}" min="1" value="1" style="width:60px; margin-right:8px;">
+                <button class="agregar-carrito" onclick="añadirCarrito(${producto.id}, document.getElementById('cantidad-${producto.id}').value)">Agregar al carrito</button>
         `;
         contenedorProductos.appendChild(productoElement);
     });
 }
 
-function añadirCarrito(productId) {
+function añadirCarrito(productId, cantidad = 1) {
+    cantidad = parseInt(cantidad) || 1;
     const product = productos.find(p => p.id === productId);
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     const existingIndex = cart.findIndex(p => p.id === productId);
 
     if (existingIndex !== -1) {
-        cart[existingIndex].cantidad += 1;
+        cart[existingIndex].cantidad += cantidad;
     } else {
-        cart.push({ ...product, cantidad: 1 });
+        cart.push({ ...product, cantidad: cantidad });
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -224,6 +226,9 @@ function mostrarCarrito() {
         contenedor.innerHTML = '<p>El carrito está vacío.</p>';
         return;
     }
+
+    //Calculo de total dentro de la funcion
+    let total = 0;
     cart.forEach(producto => {
         contenedor.innerHTML += `
             <div class="carrito-item">
@@ -235,7 +240,14 @@ function mostrarCarrito() {
                 <button onclick="eliminarDelCarrito(${producto.id})">Eliminar</button>
             </div>
         `;
+        total += producto.precio * producto.cantidad;
     });
+    //Contenedor para el total
+        contenedor.innerHTML += `
+        <div class="carrito-total">
+            <h4>Total: $${total.toLocaleString()}</h4>
+        </div>
+    `;
 }
 
 function eliminarDelCarrito(id) {
@@ -258,7 +270,8 @@ function mostrarDetalleProducto() {
                 <h2>${producto.nombre}</h2>
                 <p>${producto.descripcion}</p>
                 <p><strong>$${producto.precio.toLocaleString()}</strong></p>
-                <button onclick="addToCart(${producto.id})">Agregar al carrito</button>
+                <input type="number" id="detalle-cantidad" min="1" value="1" style="width:60px; margin-right:8px;">
+                <button onclick="añadirCarrito(${producto.id}, document.getElementById('detalle-cantidad').value)">Agregar al carrito</button>
             </div>
         `;
     } else if (contenedor) {
