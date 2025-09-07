@@ -80,3 +80,103 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Si estamos en la página de productos, mostramos los productos.
+    if (document.getElementById('productos')) {
+        mostrarProductos(productos);
+    }
+    // Si estamos en la página del carrito, mostramos el carrito.
+    if (document.getElementById('carrito')) {
+        mostrarCarrito();
+    }
+});
+
+// Función para mostrar los productos en la página de productos
+function mostrarProductos(productos) {  
+    const contenedorProductos = document.getElementById('productos');
+    contenedorProductos.innerHTML = '';
+
+    productos.forEach(producto => {
+        const productoElement = document.createElement('div');
+        productoElement.classList.add('producto');
+
+        productoElement.innerHTML = `
+            <div class="producto">
+                <a href="detalle.html?id=${producto.id}">
+                <img src="${producto.imagen}" alt="${producto.nombre}" class="producto-imagen" />
+                </a>
+                <h3>${producto.nombre}</h3>
+                <p>${producto.descripcion}</p>
+                <p><strong>$${producto.precio.toLocaleString()}</strong></p>
+                <button class="agregar-carrito" onclick="añadirCarrito(${producto.id})">Agregar al carrito</button></div>
+        `;
+        contenedorProductos.appendChild(productoElement);
+    });
+}
+
+function añadirCarrito(productId) {
+    const product = productos.find(p => p.id === productId);
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const existingIndex = cart.findIndex(p => p.id === productId);
+
+    if (existingIndex !== -1) {
+        cart[existingIndex].cantidad += 1;
+    } else {
+        cart.push({ ...product, cantidad: 1 });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${product.nombre} agregado al carrito!`);
+}
+
+function mostrarCarrito() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const contenedor = document.getElementById('carrito');
+    contenedor.innerHTML = '';
+    if (cart.length === 0) {
+        contenedor.innerHTML = '<p>El carrito está vacío.</p>';
+        return;
+    }
+    cart.forEach(producto => {
+        contenedor.innerHTML += `
+            <div class="carrito-item">
+                <img src="${producto.imagen}" alt="${producto.nombre}" style="width:100px;">
+                <h3>${producto.nombre}</h3>
+                <p>${producto.descripcion}</p>
+                <p><strong>$${producto.precio.toLocaleString()}</strong></p>
+                <p>Cantidad: ${producto.cantidad}</p>
+                <button onclick="eliminarDelCarrito(${producto.id})">Eliminar</button>
+            </div>
+        `;
+    });
+}
+
+function eliminarDelCarrito(id) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart = cart.filter(p => p.id !== id);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    mostrarCarrito();
+}
+
+function mostrarDetalleProducto() {
+    const params = new URLSearchParams(window.location.search);
+    const productId = parseInt(params.get('id'));
+    const producto = productos.find(p => p.id === productId);
+
+    const contenedor = document.getElementById('detalle-producto');
+    if (producto && contenedor) {
+        contenedor.innerHTML = `
+            <div class="detalle">
+                <img src="${producto.imagen}" alt="${producto.nombre}" style="width:300px;">
+                <h2>${producto.nombre}</h2>
+                <p>${producto.descripcion}</p>
+                <p><strong>$${producto.precio.toLocaleString()}</strong></p>
+                <button onclick="addToCart(${producto.id})">Agregar al carrito</button>
+            </div>
+        `;
+    } else if (contenedor) {
+        contenedor.innerHTML = '<p>Producto no encontrado.</p>';
+    }
+}

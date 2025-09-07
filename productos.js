@@ -1,5 +1,4 @@
-{
-  "productos": [
+const productos = [
     {
       "id": 1,
       "nombre": "Capibara de Peluche ",
@@ -72,5 +71,4 @@
       "imagen": "img/tigre.jpg",
       "categoria": "Peluches"
     }
-  ]
-}
+]
