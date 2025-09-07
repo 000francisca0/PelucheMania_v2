@@ -92,6 +92,91 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Validacion de email foter
+document.addEventListener('DOMContentLoaded', function() {
+  const newsletterForm = document.getElementById('newsletterForm');
+
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function(event) {
+      const emailInput = document.getElementById('newsletterEmail');
+      const emailHelp = document.getElementById('newsletterEmailHelp');
+      const emailRegex = /^[\w.-]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/;
+
+      emailHelp.textContent = ''; // Limpiar mensaje de error
+      let esValido = true;
+
+      if (emailInput.value.length > 100) {
+        emailHelp.textContent = 'Correo inválido. Máximo 100 caracteres.';
+        esValido = false;
+      }
+
+      if (!emailRegex.test(emailInput.value)) {
+        emailHelp.textContent = 'El correo debe ser de @duoc.cl, @profesor.duoc.cl o @gmail.com.';
+        esValido = false;
+      }
+      
+      if (!esValido) {
+        event.preventDefault();
+      } else {
+        alert('¡Suscripción exitosa!');
+      }
+    });
+  }
+});
+
+//Validacion de página registro 
+document.addEventListener('DOMContentLoaded', function() {
+  const registroForm = document.getElementById('registroForm');
+
+  if (registroForm) {
+    registroForm.addEventListener('submit', function(event) {
+      // Prevén el envío por defecto del formulario
+      event.preventDefault();
+
+      let esValido = true;
+
+      // 1. Validar el email
+      const emailInput = document.getElementById('registroEmail');
+      const emailHelp = document.getElementById('registroEmailHelp');
+      const emailRegex = /^[\w.-]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/;
+
+      emailHelp.textContent = '';
+      if (emailInput.value.length > 100 || !emailRegex.test(emailInput.value)) {
+        emailHelp.textContent = 'El correo no es válido. Debe ser de @duoc.cl, @profesor.duoc.cl, @gmail.com. Máximo 100 carácteres';
+        esValido = false;
+      }
+
+      // 2. Validar el nombre completo
+      const nombreInput = document.getElementById('registroNombre');
+      const nombreHelp = document.getElementById('registroNombreHelp');
+
+      nombreHelp.textContent = '';
+      if (nombreInput.value.length < 2 || nombreInput.value.length > 100) {
+        nombreHelp.textContent = 'El nombre debe tener entre 2 y 100 caracteres.';
+        esValido = false;
+      }
+
+      // 3. Validar la contraseña
+      const passwordInput = document.getElementById('registroPassword');
+      const passwordHelp = document.getElementById('registroPasswordHelp');
+
+      passwordHelp.textContent = '';
+      if (passwordInput.value.length < 4 || passwordInput.value.length > 10) {
+        passwordHelp.textContent = 'La contraseña debe tener entre 4 y 10 caracteres.';
+        esValido = false;
+      }
+      
+      // Si todo es válido, puedes enviar el formulario o mostrar un mensaje
+      if (esValido) {
+        alert('Formulario de registro enviado con éxito!');
+        // Aquí podrías agregar la lógica para enviar los datos a un servidor
+      }
+    });
+  }
+});
+
+
+
 // Función para mostrar los productos en la página de productos
 function mostrarProductos(productos) {  
     const contenedorProductos = document.getElementById('productos');

@@ -47,10 +47,11 @@
 
     <div class="card-body" style="display: flex; flex-direction: column; align-items: center;">
         <h5 class="card-title">Tú carrito</h5>
-        <a href="productos.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Volver a productos</a>
+        <a href="productos.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Volver a
+            productos</a>
     </div>
 
-     <div id="carrito"></div>
+    <div id="carrito"></div>
 
     <!--Footer con formulario de correo-->
     <footer>
@@ -64,15 +65,17 @@
         </div>
         <div class="newsletter-form">
             <h3>Mantente en contacto únete a nuestro newsletter</h3>
-            <form action="carrito.html" method="get">
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required>
+            <form id="newsletterForm" action="inicioSesion.html" method="get">
+                <label for="newsletterEmail">Correo electrónico:</label>
+                <input type="email" id="newsletterEmail" name="email">
+                <small id="newsletterEmailHelp" class="form-text text-danger"></small>
                 <button type="submit">Suscribir</button>
             </form>
         </div>
     </footer>
 
-</body> 
+</body>
 <script src="productos.js"></script>
 <script src="funciones.js"></script>
+
 </html>

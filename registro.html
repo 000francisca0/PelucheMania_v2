@@ -53,37 +53,38 @@
 
     <!--Inicio del formulario-->
     <div class="container mt-5">
-        <div class="row justified-content-center" style="display: flex; flex-direction: column; align-items: center;">
-            <div class="col-md-8 col-lg-8">
-                <form id = "registroForm">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <form id="registroForm">
                     <div class="form-group">
-                        <label for="usuario">Correo electrónico</label>
-                        <input type="email" class="form-control" id="correo electrónico"
-                            placeholder="tucorreo@gmail.com" required>
+                        <label for="registroEmail">Correo electrónico</label>
+                        <input type="email" class="form-control" id="registroEmail" placeholder="tucorreo@gmail.com"
+                            required>
+                        <small id="registroEmailHelp" class="form-text text-danger"></small>
                     </div>
-                    <div class="form-row">
-                        <div class="col">
-                            <label for="usuarios">Nombre</label>
-                            <input type="text" class="form-control" placeholder="Tony" required>
-                        </div>
-                        <div class="col">
-                            <label for="usuarios">Apellidos</label>
-                            <input type="text" class="form-control" placeholder="Stark" required>
-                        </div>
-                    </div>
+
                     <div class="form-group">
-                        <label for="usuario">Género</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <label for="registroNombre">Nombre completo</label>
+                        <input type="text" class="form-control" id="registroNombre" placeholder="Tony Stark" required>
+                        <small id="registroNombreHelp" class="form-text text-danger"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registroGenero">Género</label>
+                        <select class="form-control" id="registroGenero">
                             <option>Mujer</option>
                             <option>Hombre</option>
                             <option>Prefiero no decirlo</option>
                         </select>
-                        <div class="form-group">
-                            <label for="password">Contraseña</label>
-                            <input type="password" class="form-control" id="password">
-                            <small id="passwordHelp" class="form-text text-danger"></small>
-                        </div>
-                        <button type="submit" class="btn btn-secondary">Enviar</button>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registroPassword">Contraseña</label>
+                        <input type="password" class="form-control" id="registroPassword">
+                        <small id="registroPasswordHelp" class="form-text text-danger"></small>
+                    </div>
+
+                    <button type="submit" class="btn btn-secondary">Enviar</button>
                 </form>
             </div>
         </div>
@@ -102,14 +103,16 @@
         </div>
         <div class="newsletter-form">
             <h3>Mantente en contacto únete a nuestro newsletter</h3>
-            <form action="registro.html" method="get">
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required>
+            <form id="newsletterForm" action="inicioSesion.html" method="get">
+                <label for="newsletterEmail">Correo electrónico:</label>
+                <input type="email" id="newsletterEmail" name="email">
+                <small id="newsletterEmailHelp" class="form-text text-danger"></small>
                 <button type="submit">Suscribir</button>
             </form>
         </div>
     </footer>
 
 </body>
+<script src="funciones.js"></script>
 
 </html>

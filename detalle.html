@@ -38,7 +38,7 @@
                     <li><a href="inicioSesion.html">Inicio de Sesión</a></li>
                     <li><a href="registro.html">Registro</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
-                     <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="carrito.html">Carrito 🛒</a></li>
                 </ul>
@@ -63,9 +63,10 @@
         </div>
         <div class="newsletter-form">
             <h3>Mantente en contacto únete a nuestro newsletter</h3>
-            <form action="productos.html" method="get">
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required>
+            <form id="newsletterForm" action="inicioSesion.html" method="get">
+                <label for="newsletterEmail">Correo electrónico:</label>
+                <input type="email" id="newsletterEmail" name="email">
+                <small id="newsletterEmailHelp" class="form-text text-danger"></small>
                 <button type="submit">Suscribir</button>
             </form>
         </div>
@@ -74,7 +75,8 @@
 </body>
 <script src="productos.js"></script>
 <script src="funciones.js"></script>
-    <script>
-        mostrarDetalleProducto();
-    </script>
+<script>
+    mostrarDetalleProducto();
+</script>
+
 </html>
